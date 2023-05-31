@@ -4,7 +4,7 @@ import {
 	deleteAthleteSQLById,
 	createAthleteSQL,
 	updateAthleteSQLById,
-} from "../utils/athletes.js";
+} from "../utils/athlete.js";
 
 // GET ALL ATHLETES
 
