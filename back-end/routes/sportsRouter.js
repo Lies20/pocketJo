@@ -1,8 +1,13 @@
 import express  from "express";
-import {getSports} from "../controller/sportsController.js"
+import { getSport, getSportName, deleteSport, modifySport, createSport} from "../controller/sportsController.js"
 
 const router = express.Router();
 
-router.get("/", getSports);
+
+router.get("/", getSportName);
+router.get("/:id", getSport)
+router.post("/", createSport)
+router.delete("/:id", deleteSport)
+router.patch("/:id", modifySport)
 
 export default router;
