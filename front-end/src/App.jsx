@@ -1,10 +1,15 @@
 import './App.css'
-import Header from './components/header/Header'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import Athletes from './pages/Athletes'
 
 function App() {
 
   return (
-    <Header/>
+    <Routes>
+      <Route path="/" element={<HomePage/>}/>
+      <Route path="/athletes" element={<Athletes/>}/>
+    </Routes>
  
   )
 }
