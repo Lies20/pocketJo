@@ -11,6 +11,7 @@ export const deleteSport = async (req, res) => {
     await deleteSportSQL(id);
     res.json({ message: `Sport Deleted ${id}` });
 }
+
 export const modifySport = async (req, res) => {
     const { nom } = req.body;
     const { id } = req.params;
