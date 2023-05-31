@@ -3,7 +3,6 @@ DROP DATABASE IF EXISTS dataJO;
 CREATE DATABASE dataJO;
 
 -- Utilisation de la base de données
--- USE dataJO;
 
 -- Création de la table "sport"
 CREATE TABLE dataJO.sport (
@@ -22,8 +21,7 @@ CREATE TABLE dataJO.epreuve (
 -- Création de la table "athlète"
 CREATE TABLE dataJO.athlete (
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  nom VARCHAR(50) NOT NULL,
-  titre VARCHAR(60) NOT NULL
+  nom VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE dataJO.medaille (
