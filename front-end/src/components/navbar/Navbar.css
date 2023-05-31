@@ -1,0 +1,145 @@
+
+
+.nav-toggler {
+    position: absolute;
+    z-index: 10;
+    top: 3px;
+    right: 20px;
+    height: 50px;
+    width: 35px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: black;
+    transition: transform 0.3s ease-out;
+    opacity: 0.1s ease-out;
+}
+
+.l1 {
+    transform: translateY(-10px);
+}
+
+.l1.active {
+    transform: translateY(0px) rotate(135deg);
+  
+   
+}
+
+.l2.active {
+    opacity: 0;
+}
+.l3 {
+    transform: translateY(10px);
+}
+.l3.active {
+    transform: translateY(0px) rotate(-135deg);
+}
+
+
+.nav-mobile {
+    position: absolute;
+    width: 100%;
+    min-height: 23vh;
+    padding: 1rem;
+    top: 54px;
+    left: 0;
+    display: flex;
+    z-index: 10;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    opacity: 0.8;
+    background: white;
+    transform: translateY(-150%);
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+}
+nav.active {
+    transform: translate(0);
+}
+.navbar-link {
+    color: black;
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    cursor:pointer;
+    animation: fallIn 1s ease-out forwards;
+}
+
+.nav-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-right: 70px;
+    text-transform: uppercase;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.delay-1 {
+    animation-delay: .1s;
+}
+.delay-2 {
+    animation-delay: .2s;
+}
+.delay-3 {
+    animation-delay: .3s;
+}
+.delay-4 {
+    animation-delay: .4s;
+}
+.delay-5 {
+    animation-delay: .5s;
+}
+.delay-6 {
+    animation-delay: .6s;
+}
+
+@keyframes fallIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-150%);
+      }
+
+      50% {
+        opacity: .5;
+      }
+80% {
+    opacity: 1;
+}
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+}
+
+
+
+@media screen and (min-width:1024px) {
+
+.nav-toggler {
+    display: none;
+}
+
+.navbar-link {
+    color: black;
+    
+}
+
+.navbar-link:hover {
+    color: var(--blue)
+}
+}
