@@ -1,19 +1,19 @@
 import express from "express";
 import {
-	getAthletes,
-	getAthleteById,
-	deleteAthleteById,
+	getAthleteName,
+	getAthlete,
+	deleteAthlete,
 	createAthlete,
-	updateAthleteById,
-} from "../controller/athleteController.js";
+	updateAthlete,
+} from "../controller/atheleteController.js";
 
 const router = express.Router();
 
 // GET
 
-router.get("/", getAthletes);
+router.get("/", getAthleteName);
 
-router.get("/:id", getAthleteById);
+router.get("/:id", getAthlete);
 
 // POST
 
@@ -21,10 +21,10 @@ router.post("/", createAthlete);
 
 // DELETE
 
-router.delete("/:id", deleteAthleteById);
+router.delete("/:id", deleteAthlete);
 
 // PATCH
 
-router.patch("/:id", updateAthleteById);
+router.patch("/:id", updateAthlete);
 
 export default router;

@@ -1,5 +1,6 @@
 import * as fs from 'node:fs/promises';
 import sportsRouter from "./routes/sportsRouter.js";
+import athleteRouter from "./routes/atheleteRouter.js"
 import cors from "cors";
 import express from 'express';
 // import https from 'node:https';
@@ -14,7 +15,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/sports', sportsRouter)
+app.use('/api/sports', sportsRouter);
+app.use('/api/athlete', athleteRouter )
 
 app.listen(3001);
 

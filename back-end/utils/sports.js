@@ -4,7 +4,7 @@ export const pool = mysql
 	.createPool({
 		host: "localhost",
 		database: "dataJO",
-		password: "",
+		password: "PocketJoSimplon",
 		user: "root",
 	})
 	.promise();
@@ -13,7 +13,7 @@ export const getSportName = async () => {
 	const [rows] = await pool.query("SELECT * FROM sport");
 	return rows;
 };
-=======
+
 export const getSportNameSQL = async () => {
     const [rows] = await pool.query('SELECT * FROM sport');
     return rows;

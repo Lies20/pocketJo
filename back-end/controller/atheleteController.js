@@ -1,24 +1,24 @@
 import {
-	getAthletesSQL,
-	getAthleteSQLById,
-	deleteAthleteSQLById,
+	getAthleteNameSQL,
+	getAthleteSQL,
+	deleteAthleteSQL,
 	createAthleteSQL,
-	updateAthleteSQLById,
+	updateAthleteSQL,
 } from "../utils/athlete.js";
 
 // GET ALL ATHLETES
 
-export const getAthletes = async (req, res) => {
-	const athletes = await getAthletesSQL();
+export const getAthleteName = async (req, res) => {
+	const athletes = await getAthleteNameSQL();
 	res.json(athletes);
 };
 
 // GET SINGLE ATHLETE BY ID
 
-export const getAthleteById = async (req, res) => {
+export const getAthlete = async (req, res) => {
 	const { id } = req.params;
 	try {
-		const athlete = await getAthleteSQLById(id);
+		const athlete = await getAthleteSQL(id);
 		res.json(athlete);
 	} catch (error) {
 		console.log("error", error);
@@ -27,10 +27,10 @@ export const getAthleteById = async (req, res) => {
 
 //  DELETE SINGLE ATHLETE BY ID
 
-export const deleteAthleteById = async (req, res) => {
+export const deleteAthlete = async (req, res) => {
 	const { id } = req.params;
 	console.log("id", id);
-	await deleteAthleteSQLById(id);
+	await deleteAthleteSQL(id);
 	res.json({ message: `Athlete Deleted ${id}` });
 };
 
@@ -48,11 +48,11 @@ export const createAthlete = async (req, res) => {
 
 // UPDATE ATHLETE BY ID
 
-export const updateAthleteById = async (req, res) => {
+export const updateAthlete = async (req, res) => {
 	const { nom, prenom } = req.body;
 	const { id } = req.params;
 	try {
-		await updateAthleteSQLById(nom, prenom, id);
+		await updateAthleteSQL(nom, prenom, id);
 		res.json({ message: `Athlete ${nom} ${prenom} patchted !` });
 	} catch (error) {
 		console.log("error", error);
