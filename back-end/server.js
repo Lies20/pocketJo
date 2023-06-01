@@ -19,8 +19,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-app.use('/api/sports', sportsRouter)
 app.use('/api/epreuves', epreuvesRouter)
 
 app.use('/api/sports', sportsRouter);
