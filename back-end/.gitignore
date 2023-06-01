@@ -3,6 +3,6 @@ node_modules
 
 yarn.lock
 package-lock.json
-
+pool.js
 .env.sample
 
