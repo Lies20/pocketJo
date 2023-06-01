@@ -1,15 +1,4 @@
-import mysql from "mysql2";
-
-
-export const pool = mysql 
-.createPool({
-    host: "localhost",
-	database: "dataJO",
-    password: "",
-    user:"root"
-})
-.promise();
-
+import {pool} from "./pool.js"
 
 export const getSportName = async () => {
 	const [rows] = await pool.query("SELECT * FROM sport");
