@@ -1,0 +1,9 @@
+import Header from '../components/header/Header'
+
+function Athletes() {
+  return (
+    <Header/>
+  )
+}
+
+export default Athletes
