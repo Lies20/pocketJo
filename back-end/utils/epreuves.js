@@ -1,5 +1,4 @@
-import {pool} from "./sports.js"
-
+import {pool} from "./pool.js"
 
 // READ
 export const getEpreuveNamesSQL = async () => {
