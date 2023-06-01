@@ -1,8 +1,9 @@
 import "./Logo.css"
+import { Link } from "react-router-dom"
 
 function Logo() {
   return (
-    <div>Logo</div>
+    <div><Link to="/">Logo</Link></div>
   )
 }
 
