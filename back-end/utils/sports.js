@@ -1,4 +1,5 @@
-import mysql from "mysql2"
+import mysql from "mysql2";
+
 
 export const pool = mysql 
 .createPool({
@@ -8,6 +9,13 @@ export const pool = mysql
     user:"root"
 })
 .promise();
+
+
+export const getSportName = async () => {
+	const [rows] = await pool.query("SELECT * FROM sport");
+	return rows;
+};
+
 
 export const getSportNameSQL = async () => {
     const [rows] = await pool.query('SELECT * FROM sport');
@@ -32,3 +40,4 @@ export const getSportSQL = async (id) => {
     const [rows] = await pool.query("SELECT * FROM sport where id = ?", [id]);
     return rows[0];
   };
+
