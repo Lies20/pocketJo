@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function Navbar() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  
   const isMobile = window.innerWidth < 1024;
   
 
