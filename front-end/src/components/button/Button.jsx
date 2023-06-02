@@ -1,4 +1,5 @@
 import config from "../../config/config";
+import "./Button.css"
 import { useState } from "react";
 
 function Button() {
@@ -26,13 +27,13 @@ function Button() {
         })
       }
     return (
-        <>
-        <input type="text" onChange={(event
+        <div className="button-container-add">
+        <input className="input-add" type="text" onChange={(event
         ) => {
           setValue(event.target.value) 
-        }}></input>
-        <button type="onSubmit" onClick={updateSport}>Add</button>
-        </>
+        }}/>
+        <button className="button-add" type="onSubmit" onClick={updateSport}>Add</button>
+        </div>
   )
 }
 

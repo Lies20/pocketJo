@@ -24,12 +24,6 @@ function Athlete() {
 }, []);
 
 
- 
-  
-
-
-
-
 return(
   <>
   <Header/>
@@ -42,10 +36,6 @@ return(
      setAthlete={setAthlete}
      />
       ))}
-      <div>
-
-  
-      </div>
  </div>
       </main>
       </>
