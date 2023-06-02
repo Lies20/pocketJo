@@ -3,7 +3,9 @@ import sportsRouter from "./routes/sportsRouter.js";
 
 import epreuvesRouter from './routes/epreuvesRouter.js';
 
-import athleteRouter from "./routes/atheleteRouter.js"
+import athleteRouter from "./routes/atheleteRouter.js";
+
+import titreRouter from "./routes/titreRouter.js";
 
 import cors from "cors";
 import express from 'express';
@@ -19,10 +21,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/epreuves', epreuvesRouter)
+app.use('/api/epreuves', epreuvesRouter);
 
 app.use('/api/sports', sportsRouter);
-app.use('/api/athlete', athleteRouter )
+
+app.use('/api/athlete', athleteRouter);
+
+app.use('/api/titre', titreRouter);
 
 
 app.listen(3001);
