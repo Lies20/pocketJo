@@ -6,6 +6,7 @@ export const pool = mysql
     host: "localhost",
 	database: "dataJO",
     password: "",
-    user:"root"
+    user:"root",
+
 })
 .promise();

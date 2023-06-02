@@ -2,7 +2,7 @@ import {pool} from "./pool.js"
 
 // READ
 export const getEpreuveNamesSQL = async () => {
-    const [rows] = await pool.query('SELECT nom FROM epreuve');
+    const [rows] = await pool.query('SELECT * FROM epreuve');
     return rows;
 }
 
@@ -19,22 +19,22 @@ export const getEpreuveSQL = async (nameId) => {
 }
 
 // DELETE
-export const deleteEpreuveSQL = async (epreuveId) => {
-    const deleteQuery = 'DELETE FROM epreuve WHERE id = ?';
+// export const deleteEpreuveSQL = async (epreuveId) => {
+//     const deleteQuery = 'DELETE FROM epreuve WHERE id = ?';
   
-    try {
-      const [result] = await pool.query(deleteQuery, [epreuveId]);
-      return result;
-    } catch (error) {
-      console.error('Error deleting epreuve:', error);
-      throw error;
-    }
-  };
+//     try {
+//       const [result] = await pool.query(deleteQuery, [epreuveId]);
+//       return result;
+//     } catch (error) {
+//       console.error('Error deleting epreuve:', error);
+//       throw error;
+//     }
+//   };
 
   // POST 
 
   export const createEpreuveSQL = async (epreuveData) => {
-    const { nom } = epreuveData;
+    const nom = epreuveData;
     const insertQuery = 'INSERT INTO epreuve (nom) VALUES (?)';
   
     try {

@@ -4,7 +4,7 @@ import {
 	getAthlete,
 	deleteAthlete,
 	createAthlete,
-	updateAthlete,
+	updateAthlete
 } from "../controller/atheleteController.js";
 
 const router = express.Router();
@@ -14,6 +14,8 @@ const router = express.Router();
 router.get("/", getAthleteName);
 
 router.get("/:id", getAthlete);
+
+// router.get("/delete/:id", deleteAthlete);
 
 // POST
 

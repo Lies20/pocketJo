@@ -31,16 +31,16 @@ export const deleteAthlete = async (req, res) => {
 	const { id } = req.params;
 	console.log("id", id);
 	await deleteAthleteSQL(id);
-	res.json({ message: `Athlete Deleted ${id}` });
+	res.json({ message: `Athlete Deleted` });
 };
 
 // CREATE ATHLETE
 
 export const createAthlete = async (req, res) => {
-	const { nom, prenom } = req.body;
+	const nom = req.body;
 	try {
-		await createAthleteSQL(nom, prenom);
-		res.json({ message: `Athlete ${nom} ${prenom} created !` });
+		await createAthleteSQL(nom);
+		res.json({ message: `Athlete ${nom} created !` });
 	} catch (error) {
 		console.log("error", error);
 	}
@@ -49,12 +49,15 @@ export const createAthlete = async (req, res) => {
 // UPDATE ATHLETE BY ID
 
 export const updateAthlete = async (req, res) => {
-	const { nom, prenom } = req.body;
+	const nom  = req.body;
 	const { id } = req.params;
 	try {
-		await updateAthleteSQL(nom, prenom, id);
-		res.json({ message: `Athlete ${nom} ${prenom} patchted !` });
+		await updateAthleteSQL(nom, id);
+		res.json({ message: `Athlete ${nom} patchted !` });
 	} catch (error) {
 		console.log("error", error);
 	}
 };
+
+
+
