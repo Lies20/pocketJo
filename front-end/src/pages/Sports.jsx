@@ -1,5 +1,6 @@
 import Header from '../components/header/Header'
 import config from '../config/config.js'
+import Button from '../components/button/Button';
 import { useState, useEffect } from 'react';
 
 function Sports() {
@@ -33,7 +34,7 @@ function Sports() {
       return response.json()
     })
     .then((result) => {
-      setAthlete(result);
+      setSports(result);
       console.log(result);
     })
   }
@@ -55,7 +56,8 @@ function Sports() {
       ))}
       <div>
       </div>
- </div>
+      </div>
+      <Button/>
     </>
   )
 }
