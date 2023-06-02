@@ -9,7 +9,7 @@ export const getAthleteNameSQL = async () => {
 
 export const deleteAthleteSQL = async (id) =>
 {
-  await pool.query("DELETE FROM athlete WHERE id = ? ", [id]);
+  await pool.query("DELETE FROM athlete WHERE id = ?", [id]);
 };
 
 export const createAthleteSQL = async (nom) => {
