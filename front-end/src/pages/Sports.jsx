@@ -20,6 +20,22 @@ function Sports() {
       })
   }, []);
 
+  const updateSport = async () => {
+
+    await fetch(config.API_sports, {
+      method: 'UPDATE',
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((result) => {
+      setAthlete(result);
+      console.log(result);
+    })
+  }
+
+
+
   return (
     <>
      <Header/>
@@ -31,7 +47,7 @@ function Sports() {
           </div>
 
           <div className="button-container">
-            <button className="button">Modify</button>
+            <button onClick={updateSport} className="button">Modify</button>
           </div>
         </div>
       ))}
