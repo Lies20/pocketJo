@@ -19,9 +19,15 @@ function Sports() {
   }, []);
 
   const updateSport = async () => {
-
-    await fetch(config.API_sports, {
-      method: 'UPDATE',
+    
+    await fetch(config.API_sports_patch, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
     })
     .then((response) => {
       return response.json()
