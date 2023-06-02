@@ -2,8 +2,6 @@ import Header from '../components/header/Header'
 import config from '../config/config.js'
 import { useState, useEffect } from 'react';
 
-
-
 function Sports() {
 
   const [sports, setSports] = useState([]);
@@ -33,8 +31,6 @@ function Sports() {
       console.log(result);
     })
   }
-
-
 
   return (
     <>
