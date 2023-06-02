@@ -1,15 +1,9 @@
-import {  getSportNameSQL, getSportSQL, deleteSportSQL, createSportSQL, modifySportSQL } from "../utils/sports.js";
+import {  getSportNameSQL, getSportSQL, createSportSQL, modifySportSQL } from "../utils/sports.js";
 
 
 export const getSportName = async (req, res) => {
     const sports = await getSportNameSQL()
     res.json(sports)
-}
-
-export const deleteSport = async (req, res) => {
-    const { id } = req.params;
-    await deleteSportSQL(id);
-    res.json({ message: `Sport Deleted ${id}` });
 }
 
 export const modifySport = async (req, res) => {

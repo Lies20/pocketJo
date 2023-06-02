@@ -1,21 +1,21 @@
-import { getEpreuveNamesSQL, getEpreuveSQL, deleteEpreuveSQL, createEpreuveSQL, updateEpreuveSQL } from "../utils/epreuves.js";
+import { getEpreuveNamesSQL, getEpreuveSQL, createEpreuveSQL, updateEpreuveSQL } from "../utils/epreuves.js";
 
 export const getEpreuvesNames = async (req, res) => {
     const epreuves = await getEpreuveNamesSQL();
     res.json(epreuves)
 }
 
-export const deleteEpreuve = async (req, res) => {
-    const { id } = req.params;
-    await deleteEpreuveSQL(id);
-    res.json({ message: `Sport Deleted ${id}` });
-} 
+// export const deleteEpreuve = async (req, res) => {
+//     const { id } = req.params;
+//     await deleteEpreuveSQL(id);
+//     res.json({ message: `Sport Deleted ${id}` });
+// } 
 
 export const updateEpreuve = async (req, res) => {
     const { nom } = req.body;
     const { id } = req.params;
     try {
-      await updateEpreuveSQL(nom, id);
+      await updateEpreuveSQL(id, nom);
       res.json({ message: `Sport ${nom} patchted !` });
     } catch (error) {
       console.log("error", error);
