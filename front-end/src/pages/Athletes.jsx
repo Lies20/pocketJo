@@ -1,3 +1,4 @@
+import Card from "../components/card/Card.jsx";
 import Header from "../components/header/Header.jsx";
 import config from "../config/config.js";
 import "./Pages.css"
@@ -23,30 +24,30 @@ function Athlete() {
 }, []);
 
 
+ 
+  
+
+
+
 
 return(
   <>
   <Header/>
+  <main className="page-container">
+<h2 className="title-page">Les Athlètes gagnants</h2>
     <div className='crud-container'>
-   {athlete.map((ath) => (
-     <div key={ath.id} className="list-cards">
-          <div className="text-container">
-            <p>{ath.nom}</p>
-            <p>{ath.nom}</p>
-
-          </div>
-
-          <div className="button-container">
-            <button className="button">Modify</button>
-            <button className="button">Delete</button>
-          </div>
-        </div>
+   {athlete.length > 0 && athlete.map((ath, index) => (
+     <Card athlete={ath} 
+     key={index}
+     setAthlete={setAthlete}
+     />
       ))}
       <div>
 
   
       </div>
  </div>
+      </main>
       </>
 )
 
